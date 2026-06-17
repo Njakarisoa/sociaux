@@ -1,0 +1,135 @@
+@import '../styles/variables.css';
+
+/* =========================================================
+   TOPBAR
+   Mobile: brand + actions, no search bar, no page title
+   Tablet/Desktop: page title + centered search + actions
+   ========================================================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  height: var(--header-height);
+  padding: 0 var(--sp-4);
+  background: rgba(250, 247, 248, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-brand);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.topbar__brand-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.topbar__title {
+  display: none;
+}
+
+.topbar__title h1 {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.topbar__search {
+  display: none;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 1;
+  max-width: 420px;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-pill);
+  padding: var(--sp-2) var(--sp-4);
+  transition: box-shadow var(--t-fast);
+}
+
+.topbar__search:focus-within {
+  box-shadow: var(--shadow-focus);
+}
+
+.topbar__search-icon {
+  color: var(--color-slate-light);
+}
+
+.topbar__search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+  outline: none;
+}
+
+.topbar__search input::placeholder {
+  color: var(--color-slate-light);
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+}
+
+.topbar__create-btn {
+  display: none;
+}
+
+.topbar__logout-mobile {
+  display: inline-flex;
+}
+
+@media (min-width: 768px) {
+  .topbar {
+    padding: 0 var(--sp-6);
+  }
+
+  .topbar__mobile-brand {
+    display: none;
+  }
+
+  .topbar__title {
+    display: block;
+  }
+
+  .topbar__search {
+    display: flex;
+  }
+
+  .topbar__create-btn {
+    display: inline-flex;
+  }
+
+  .topbar__logout-mobile {
+    display: none; /* logout lives in sidebar at this size */
+  }
+}
+
+@media (min-width: 1025px) {
+  .topbar {
+    padding: 0 var(--sp-8);
+  }
+}

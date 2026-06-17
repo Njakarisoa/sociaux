@@ -1,0 +1,60 @@
+@import '../styles/variables.css';
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.stat-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-pill__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: var(--fs-md);
+  flex-shrink: 0;
+}
+
+.stat-pill--primary .stat-pill__icon {
+  background: rgba(230, 52, 98, 0.12);
+  color: var(--color-primary);
+}
+
+.stat-pill--accent .stat-pill__icon {
+  background: rgba(255, 182, 39, 0.18);
+  color: var(--color-accent-dark);
+}
+
+.stat-pill--success .stat-pill__icon {
+  background: rgba(61, 220, 151, 0.16);
+  color: #1f9e6f;
+}
+
+.stat-pill__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.stat-pill__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-md);
+  color: var(--color-ink);
+}
+
+.stat-pill__label {
+  font-size: var(--fs-xs);
+  color: var(--color-slate);
+}
